@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salespro Tool</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+        }
+        body{
+            /* background-image: linear-gradient(to top right,rgb(18, 4, 24),rgb(63, 9, 63));
+            height: 100vh;
+            overflow: hidden;
+            background-repeat: no-repeat; */
+        
+            background-image: url("/static/images/back.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 90vh;
+            width: 90vw;
+        }h1{
+            text-align: center;
+            color: black;
+            font-size: 50px;
+            margin-top: 30px;
+            margin-left: 10%;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        div{
+            display: flex;
+            transform: scale(0.9);
+            justify-content: center;
+            margin-left: 10%;
+        }
+        form{
+            border: 1px solid black;
+            padding: 30px;
+            font-size: 22px;
+            border-radius: 15px ;
+            line-height: 30px;
+            background-color: white;
+            box-shadow: 0px 0px 15px black;
+        }
+        
+        select , input{
+            font-size: 18px;
+            padding: 4px;
+            border: 1.6px solid black;
+            border-radius: 5px;
+            width: 220px;
+            
+        }
+        select{
+            height: 40px;
+        }
+        input{
+            height: 28px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        option{
+            height: 45px;
+            font-size: 20px;
+        }
+        
+        button[type=submit]{
+            width: 390px;
+            border-radius: 6px;
+            height: 40px;
+            font-size: 90%;
+            background-color:rgb(128, 94, 190);
+            color: white;
+            cursor: pointer;
+        }
+        button[type=submit]:hover{
+            background-color:rgb(98, 62, 165);
+            transition: 0.2s ease-in-out all;
+        }#error{
+            color: red;
+            display: none;
+            font-size: 70%;
+            margin: 0%;
+            margin-left: 2%;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>- Salespro -</h1>
+    <div>
+        <form action="/predict" method="post">
+            
+            <label for="item_type">Item Type:
+                <select id="item_type" name="item_type" >
+                    <option>Dairy Products</option>
+                    <option>Soft Drinks</option>
+                    <option>Fruits and Vegetables</option>
+                    <option>Household</option>
+                    <option>Baking Goods</option>
+                    <option>Snack Foods</option>
+                    <option>Frozen Foods</option>
+                    <option>Breakfast</option>
+                    <option>Health and Hygiene</option>
+                    <option>Breads</option>
+                </select>
+            </label><br><br>
+            
+            <label for="item_mrp">Item MRP:</label>
+            <input type="number" onchange="validate(event)" id="item_mrp" name="item_mrp" required><br>
+            <p id="error" style="display:none; color:red;">Note: Input must be 0-300</p><br>
+    
+            <label for="outlet_identifier">Outlet Identifier:
+                <select id="outlet_identifier" name="outlet_identifier">
+                    <option>OUT010</option>
+                    <option>OUT013</option>
+                    <option>OUT017</option>
+                    <option>OUT018</option>
+                    <option>OUT019</option>
+                    <option>OUT027</option>
+                    <option>OUT035</option>
+                    <option>OUT045</option>
+                    <option>OUT046</option>
+                    <option>OUT049</option>
+                </select>
+            </label><br><br>
+            
+            <label for="outlet_size">Outlet Size:
+                <select id="outlet_size" name="outlet_size">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </label><br><br>
+            
+            <label for="outlet_location_type">Outlet Location:
+                <select id="outlet_location_type" name="outlet_location_type">
+                    <option>Tier1</option>
+                    <option>Tier2</option>
+                    <option>Tier3</option>
+                </select>
+            </label><br><br>
+            
+            <label for="outlet_type">Outlet Type:
+                <select id="outlet_type" name="outlet_type">
+                    <option>Grocery Store</option>
+                    <option>Supermarket Type1</option>
+                    <option>Supermarket Type2</option>
+                    <option>Supermarket Type3</option>
+                </select>
+            </label><br><br>
+            
+            <button type="submit" >PREDICT</button>
+        </form>
+    </div>
+    
+    <script>
+        function validate(event) {
+            let val = event.target;
+            if (val.value > 300) {
+                document.querySelector("button").style.cursor="not-allowed"
+                document.getElementById("error").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salespro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+        *{
+            margin:0;
+        }
+        body{
+            margin-top: 10px;
+            background-color: white;
+        }
+        header{
+            overflow: hidden;
+            margin-top: -9.8px;          
+        }
+        h2{
+            margin: 20px 0px 0px 50px;
+            font-size: 0px;
+        }
+        header nav{
+            height: 100px;
+            background-color: #04080F;
+            /* background-image: linear-gradient(to right, rgb(203, 129, 65), rgb(184, 93, 13)); */
+            background-image: linear-gradient(to right,rgb(35, 6, 48),rgb(63, 9, 63));
+            
+            justify-content: space-between;
+            padding-top: 10px;    
+        }
+        nav{
+            display: flex;
+            margin-top: -10px;
+            width: 100%;
+        }
+        ul{
+            display:flex;
+            margin-right: -9px;
+        }
+        li{
+            list-style: none;
+            display: flex;
+            padding-top: 10px;
+           
+        }
+        li a{
+            color: white;
+            text-decoration: none;
+            margin: 5px 10px 0px 10px;
+            padding: 25px 18px 20px 20px ;
+            font-size: 17px;
+            font-weight: 400;
+            font-family: "sora",sans-serif;
+
+        }
+        .sales{
+            margin-top: -20px;
+            margin-left: -14px;
+            padding-top: 20px;
+            width: 30%;
+            height: 100px;
+        }
+        a{
+            position: relative;}
+
+        a::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            bottom: 25px; /* Adjust to match the thickness of the underline */
+            width: 0;
+            height: 1.3px; /* Adjust the thickness of the underline */
+            background-color: white; /* Color of the underline */
+            transition: width 0.3s ease; /* Smooth transition for underline growth */
+        }
+        a:hover::after,a.active::after {
+            width: 80%; /* Makes the underline fully cover the link */
+        }
+        hr{
+            width: 78%;
+            margin: 20px 0px 20px 90px;
+            height: 2.5px;
+            background-color: rgb(53, 51, 51);
+            border-radius: 20px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            width: 75%;
+            height: 300px;
+            gap:28px;
+            padding: 30px 30px 40px 25px;
+            background-color: white;
+            margin-left: 110px;
+            margin-bottom: 130px;
+        }
+        .boxes{
+            font-size:30px;
+            border: 1.3pt solid black;
+            border-radius: 12px 12px;
+            padding: 20px;
+            height: 370px;
+            transition: 0.6s ease all;
+        }
+        .boxes:hover{
+            box-shadow: 0 0 14px black;
+            transition: 0.2s ease ;
+            border:2px solid black;
+        }
+        main{
+            margin-top: 80px;
+            margin-bottom: 50px;
+        }
+        div.cnt{
+            display: grid;
+            grid-template-columns: 3fr 1.3fr;
+            grid-template-rows: 1fr ;
+            width: 100%;
+            height: 300px;
+            margin-bottom:5px ;
+        }
+        h1{
+            font-size: 40px;
+            padding: 100px 0px 0px 180px;
+            color: white;
+            line-height: 50px;
+        }
+        .txt{
+            background-color: rgb(57, 53, 53);
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+        #one{
+            margin-top: 30px;
+        }
+        div.cnt2{
+            display: grid;
+            grid-template-columns: 1.3fr 3fr;
+            grid-template-rows: 1fr ;
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .tt{
+            background-color: rgb(216, 143, 80);
+            border-radius: 10px;
+        }
+        
+        h2{
+            font-size: 50px; 
+            overflow: hidden;
+            color: black;
+            font-weight: 530;
+            font-family: "sora",sans-serif;
+            }
+            .intro{
+                display:inline-flex;
+                width: max-content;
+                margin-left: -30px;
+                padding-top: 50px;
+            }
+            #scnd{
+                display: inline-flex;
+                width: max-content;
+            }
+            button{
+                width: 220px;
+                height: 60px;
+                border-radius: 17px;
+                color: white;
+                font-size: 23px;
+                background-image: linear-gradient(to right ,rgb(53, 9, 56),purple);
+                margin-top: 20px;
+                cursor: pointer;
+            }
+            .intro h4{
+            margin-left: 80px;
+            width: max-content;
+            font-size: 80px;
+            color: #04080F;
+            font-family: "Sora", sans-serif;
+        }
+        span{
+            /* color: #5d56b1; */
+            color: rgb(107, 15, 149);
+            /* background-image: linear-gradient(to right,rgb(63, 9, 63)rgb(144, 16, 203));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+        }
+       
+        /* #wel , .introduction{
+            
+            animation-name:maintitle ;
+            animation-duration: 1.4s;
+            animation-direction:alternate;
+            transition: ease-in all ;
+            transform: translateX(30px);
+        } */
+        /* @keyframes maintitle {
+            from{
+                transform: translateX(-100px);
+            }to{
+                transform: translateX(30px);
+            }
+            
+        }
+        @keyframes boxes {
+            from{
+                transform: translateX(-100px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        } */
+        /* #sto{
+            animation-name: boxes;
+            animation-duration: 1.3s;
+            animation-direction:alternate;
+            transition: ease-in all ;
+        } */
+        h4{
+            font-size: 35px;
+        }
+        #md{
+            margin-left: 20px;
+        }
+        #rd{
+            animation-name: boxe;
+            animation-duration: 1.3s;
+            animation-direction:alternate;
+            transition: ease-in all ;
+        }
+        /* @keyframes boxe {
+            from{
+                transform: translateX(200px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        } */
+        .s{
+            margin-left: 60px;
+        }
+        
+        footer{
+            background-image: linear-gradient(to right,rgb(35, 6, 48),rgb(63, 9, 63));
+            height: 200px;
+        }
+        div#foot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            padding: 40px;
+            height: 35px;
+            margin-left: 350px;
+        }
+        #ft{
+            color: white;
+            text-decoration: none;
+            padding:30px;
+            
+        }p{
+            color: white;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        
+        #pc{
+            padding-left: 10px;
+        }
+        #slogan{
+            color: #04080F;
+            width:max-content;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-left: 50px;
+            animation-name: slide;
+            animation-duration: 1.3s;
+            animation-direction:alternate;
+            transition: ease-in all ;
+        }
+        #slogan h3{
+            color: #04080F;
+            font-size: 29px;
+            font-family: "Noto Sans", sans-serif;
+            
+        }
+        @keyframes slide {
+            from{
+                transform: translateX(-300px);
+            }
+            to{
+                transform: translateX(0);
+            }
+        }
+        span#arrow{
+            color: white;
+            font-size: 27px;
+            font-weight: 600;
+            font-family: "sora",sans-serif;
+        }
+        </style>
+</head>
+<body class="roboto-light">
+    <header>
+        <nav>
+            <img class="sales" src="/static/photos/new-removebg.png" width="320px" height="300px">
+            <ul>
+                <li><a class="active" href="" >Home</a></li>
+                <li><a href="index.html">Tool</a></li>
+                <li><a href="form.html">Feedback</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="intro">
+        <div id="frst">
+        <h4>Welcome to <br><span>
+        SalesPro Insight!</span></h4>
+        <div id="slogan">
+            <h3>An Advanced Machine learning technique<br> to achieve your Business needs.<br>
+            <span>-salespro</span></h3>
+            <button onclick="openTool()">Launch Tool <span id="arrow">↗</span></button>
+        </div></div>
+        <div id="scnd">
+            <img src="/static/photos/statistical-data-analysis-5553431-4639135.webp"> 
+        </div>
+        
+    </div>
+    
+    <main>
+    <h2>→Why only SalesPro :</h2>
+    <hr/>
+    <div class="container">
+        <div class="boxes" id="sto"><center><img src="/static/photos/2.jpg" width="240px" height="180px"></center>
+        <h4>Confussed in<br> taking decisions.<br/>Then use <br>Salespro!!</h4></div>
+        <div class="boxes" id="2nd"><center><img src="/static/photos/3.png" width="250px" height="180px"></center>
+        <h4 id="md">Increase your <br/> profits by our <br/> most precised <br/>Analysis</h4></div>
+        <div class="boxes" id="rd"><center><img src="/static/photos/1.png" width="260px" height="180px"><h4>Don't worry <br/>we've best <br/>Algorithm to predict market..</h4></center></div>
+    </div>
+    <div class="cnt">
+        <div class="txt"><h1>You are our priority!!!<br/>Go give a quick feedback..</h1></div>
+        <div class="img"><img id="one" src="/static/photos/feed.png" width="395px" height="280px"></div>
+    </div> 
+    <div class="cnt2">
+        <div class="pic"><img src="/static/photos/real.png" id="pc" width="425px" height="280px"></div>
+        <div class="tt"><h1>We Analyse - We Predict &<br/>We update on real-time data.</h1></div>
+    </div>
+    <div class="cnt">
+        <div class="txt"><h1>No complex. A simple<br>User Interface design.</h1></div>
+        <div class="img"><img id="one" src="/static/photos/ui design.webp" width="390px" height="270px"></div>
+    </div></main>
+    <footer>
+        <div id="foot">
+        <a id="ft" href="#">Home</a>
+        <a id="ft" href="index.html">Tool</a>
+        <a id="ft" href="form.html">Feedback</a>
+        <a id="ft" href="aboutus.html">About us</a></div>
+        <p>
+        Copyright © 2024.inc All Rights Reserved.<br>
+        SalesPro
+    </p>
+        </footer>
+        <script>
+            function openTool() {
+                var filePath = "index.html";
+                 window.location.href = filePath;
+            }
+            </script>
+</body>
+</html>

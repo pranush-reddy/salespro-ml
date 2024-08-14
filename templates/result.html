@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+            font-size: 30px;
+        }
+
+        h1 {
+            color: #333;
+           
+        }
+
+        p {
+            font-size: 24px;
+            color: #008000; /* Green color for positive result, adjust as needed */
+            font-weight: bold;
+        }
+        div{
+            margin-top: 30vh;
+            animation-name: slide;
+            animation-duration: 1.5s;
+            animation-direction: normal;
+            transition: 1s ease-in-out;
+        }
+        h6{
+            font-size: 17px;
+        }
+    @keyframes slide {
+        from{
+            transform: translateX(-500px);
+        }to{
+            transform: translateX(0px);
+        }
+        
+    }
+        /* You can add more styles to customize the appearance further */
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Sales Prediction Result</h1>
+    <p>Sales amount: ₹{{  predicted_sales }}/-</p>
+    <h6>Note: Prediction's based on Historical Market Data<br>–Subject to Changes!!</h6></div>
+    <!-- You can customize the display of the result as needed -->
+</body>
+</html>
