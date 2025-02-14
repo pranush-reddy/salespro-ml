@@ -21,13 +21,7 @@ try:
     collection = db.salespro
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
-
-
-# Access the database
-db = client.get_database()
-
-# Access the collection
-collection = db.salespro
+\
 
 # Define mapping for Item_Type
 item_type_mapping = {
