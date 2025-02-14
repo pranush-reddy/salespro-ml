@@ -173,6 +173,4 @@ def submit_form():
 
 if __name__ == '__main__':
     # Create an empty form_data.txt file if it doesn't exist
-
-
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
