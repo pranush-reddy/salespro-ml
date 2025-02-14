@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import joblib
 from pymongo import MongoClient
 import pandas as pd
+from dotenv import load_dotenv
 import os
 from datetime import datetime 
 
@@ -10,9 +11,17 @@ app = Flask(__name__)
 # Load the pre-trained model
 model_path = os.path.join(os.path.dirname(__file__), 'bigmart_model')
 model = joblib.load(model_path)
+url=os.getenv("url")
 
-mongo_url = "mongodb+srv://pranush01:3sf6Zt5iO3ZTj8RR@portfolio.ya0h1nc.mongodb.net/formdata"
-client = MongoClient(mongo_url)
+app.config['url'] = url
+
+try:
+    client = MongoClient(url)
+    db = client.get_database()
+    collection = db.salespro
+except Exception as e:
+    print(f"Error connecting to MongoDB: {e}")
+
 
 # Access the database
 db = client.get_database()
